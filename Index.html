@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090b18">
+<meta name="description" content="Join Network Engagement Bot, a growing community for creators, entrepreneurs and businesses building authentic online visibility together.">
+<title>Network Engagement Bot | Grow Together</title>
+<style>
+:root{
+  --bg:#090b18;--panel:#11152a;--panel2:#171d38;
+  --text:#f6f7ff;--muted:#a8aec8;--line:#ffffff18;
+  --violet:#9c7cff;--blue:#5cc8ff;--mint:#76f0c2;
+  --radius:22px;--shadow:0 24px 80px #0006;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:
+  radial-gradient(ellipse at 75% -10%,#6d4dff30,transparent 38%),
+  radial-gradient(ellipse at 0% 45%,#2aaaff12,transparent 32%),var(--bg);
+  color:var(--text);font-family:Inter,system-ui,-apple-system,
+  BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65
+}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+.container{width:min(1160px,calc(100% - 36px));margin:auto}
+.nav{display:flex;align-items:center;justify-content:space-between;
+  gap:20px;min-height:82px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:11px;font-weight:850;
+  letter-spacing:-.04em;font-size:15px}
+.logo{width:43px;height:43px;border-radius:14px;display:grid;
+  place-items:center;background:linear-gradient(135deg,var(--violet),var(--blue));
+  color:#080b18;font-size:23px}
+.brand small{display:block;color:var(--muted);font-size:10px;
+  letter-spacing:.16em;text-transform:uppercase}
+.navlinks{display:flex;gap:23px;color:var(--muted);font-size:13px}
+.navlinks a:hover{color:white}
+.btn{border:1px solid transparent;border-radius:13px;padding:12px 18px;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-weight:750;cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.primary{background:linear-gradient(100deg,#b4a0ff,#6ad7ff);
+  color:#080b18;box-shadow:0 10px 34px #7f76ff30}
+.ghost{border-color:var(--line);background:#ffffff08;color:var(--text)}
+.full{width:100%}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;
+  border:1px solid #9c7cff55;background:#9c7cff12;color:#d2c6ff;
+  border-radius:99px;padding:7px 12px;font-size:11px;font-weight:850;
+  letter-spacing:.08em;text-transform:uppercase}
+.dot{width:7px;height:7px;background:var(--mint);border-radius:50%}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(42px,6vw,72px);line-height:1.03;
+  letter-spacing:-.065em;margin:24px 0}
+h2{font-size:clamp(30px,4vw,46px);line-height:1.12;letter-spacing:-.045em}
+h3{line-height:1.25}
+.gradient{background:linear-gradient(100deg,#c1b2ff,#6dd7ff 58%,#80f3c8);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.muted{color:var(--muted)}
+.small{font-size:12px;color:var(--muted)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;
+  align-items:center;padding:78px 0 68px}
+.hero p{font-size:18px;color:var(--muted);max-width:600px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:27px 0}
+.hero-card,.panel{background:linear-gradient(145deg,#171d38,#0e1225);
+  border:1px solid var(--line);border-radius:25px;padding:25px;box-shadow:var(--shadow)}
+.card-head{display:flex;align-items:center;justify-content:space-between;
+  gap:12px;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:17px}
+.pill{border:1px solid #76f0c233;color:var(--mint);background:#76f0c210;
+  border-radius:99px;padding:5px 9px;font-size:10px;font-weight:850}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.metric{border:1px solid var(--line);background:#ffffff06;border-radius:14px;padding:13px}
+.metric span{display:block;color:var(--muted);font-size:11px}
+.metric strong{font-size:22px}
+.demo-chart{height:105px;border:1px solid #ffffff10;border-radius:14px;
+  margin:17px 0;background:linear-gradient(180deg,#9c7cff19,transparent)}
+.demo-chart svg{width:100%;height:100%}
+.activity{display:flex;gap:10px;align-items:center;margin:10px 0;font-size:13px}
+.activity-icon{width:32px;height:32px;display:grid;place-items:center;
+  border-radius:10px;background:#9c7cff20}
+.section{padding:74px 0}
+.section-head{max-width:740px;margin:0 auto 36px;text-align:center}
+.kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--blue);font-weight:850}
+.section-head p{color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feature,.plan,.step{border:1px solid var(--line);
+  background:linear-gradient(145deg,#ffffff08,#ffffff03);
+  border-radius:20px;padding:23px}
+.feature-icon{width:46px;height:46px;border-radius:14px;display:grid;
+  place-items:center;font-size:22px;background:#9c7cff20;margin-bottom:15px}
+.feature p,.plan p,.step p{font-size:14px;color:var(--muted);margin-bottom:0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
+.steps{display:grid;gap:12px}
+.step{display:flex;gap:15px;align-items:flex-start}
+.stepnum{width:38px;height:38px;flex-shrink:0;border-radius:12px;
+  background:#9c7cff20;color:#d2c6ff;display:grid;place-items:center;font-weight:900}
+.checks{list-style:none;padding:0}
+.checks li{margin:13px 0}
+.check{color:var(--mint);font-weight:900;margin-right:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.chip{padding:9px 13px;border:1px solid var(--line);
+  background:#ffffff06;border-radius:99px;font-size:13px;color:#d9def4}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.plan{display:flex;flex-direction:column}
+.plan.featured{border-color:#9c7cff88;background:linear-gradient(145deg,#9c7cff20,#ffffff04)}
+.plan ul{padding-left:19px;color:#dfe3f6;font-size:13px}
+.plan li{margin:9px 0}
+.plan .btn{margin-top:auto}
+.price{font-size:30px;font-weight:900;letter-spacing:-.04em;margin:10px 0}
+.label{display:block;font-size:12px;color:var(--muted);margin:14px 0 6px}
+.field{width:100%;padding:13px 14px;border-radius:12px;
+  border:1px solid var(--line);background:#0b1022;color:white;outline:none}
+.field:focus{border-color:var(--violet)}
+textarea.field{resize:vertical;min-height:95px}
+.join-grid{display:grid;grid-template-columns:1fr .85fr;gap:25px;align-items:start}
+.form-card{border:1px solid var(--line);background:linear-gradient(145deg,#171d38,#0e1225);
+  border-radius:23px;padding:clamp(20px,4vw,32px)}
+.form-card h3{margin-bottom:7px}
+.note{font-size:12px;color:var(--muted)}
+.notice{padding:13px;border:1px solid #76f0c233;background:#76f0c20c;
+  border-radius:12px;font-size:13px;color:#c2f9e4;margin:15px 0}
+.benefits{display:grid;gap:12px}
+.benefit{padding:17px;border:1px solid var(--line);border-radius:15px;background:#ffffff05}
+.benefit strong{display:block;margin-bottom:4px}
+.payment-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0}
+.payment-tab{border:1px solid var(--line);border-radius:11px;
+  background:#ffffff06;color:var(--muted);padding:12px 5px;cursor:pointer}
+.payment-tab.active{border-color:#9c7cff88;color:white;background:#9c7cff20}
+.payment-panel{display:none}
+.payment-panel.active{display:block}
+.faq-list{max-width:820px;margin:auto;display:grid;gap:10px}
+.faq-item{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#ffffff05}
+.faq-q{width:100%;border:0;background:none;color:white;text-align:left;
+  display:flex;justify-content:space-between;gap:15px;padding:18px;font-weight:750;cursor:pointer}
+.faq-a{display:none;padding:0 18px 18px;color:var(--muted);font-size:14px}
+.faq-item.open .faq-a{display:block}
+.cta{padding:45px 25px;text-align:center;border:1px solid #9c7cff44;
+  border-radius:25px;background:radial-gradient(ellipse at 50% 0%,#8f75ff27,transparent 65%),#ffffff04}
+.cta p{color:var(--muted);max-width:620px;margin:0 auto 22px}
+footer{padding:35px 0 100px;border-top:1px solid var(--line);margin-top:65px}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:12px}
+.whatsapp{position:fixed;right:18px;bottom:18px;z-index:10;
+  background:#20c977;color:#062513;font-weight:900;border-radius:99px;
+  padding:13px 17px;box-shadow:0 10px 35px #0007}
+.toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);
+  background:#202744;border:1px solid var(--line);padding:12px 17px;
+  border-radius:12px;z-index:20;display:none;max-width:90%;font-size:13px}
+.toast.show{display:block}
+@media(max-width:900px){
+  .hero,.split,.join-grid{grid-template-columns:1fr}
+  .hero{gap:30px;padding-top:50px}
+  .grid3,.plans{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){
+  .container{width:calc(100% - 28px)}
+  .nav{min-height:70px}
+  .navlinks{display:none}
+  .brand{font-size:12px}
+  .logo{width:37px;height:37px}
+  .nav>.btn{padding:9px 11px;font-size:12px}
+  .hero{padding:43px 0}
+  h1{font-size:45px}
+  .hero p{font-size:16px}
+  .section{padding:53px 0}
+  .grid3,.plans{grid-template-columns:1fr}
+  .hero-card{padding:16px}
+  .metric{padding:9px}
+  .metric strong{font-size:18px}
+  .payment-tabs{gap:5px}
+  .payment-tab{font-size:12px}
+  .whatsapp{right:10px;bottom:10px;padding:11px 13px;font-size:12px}
+}
+</style>
+</head>
+<body>
+<header class="container nav">
+  <a class="brand" href="#home">
+    <span class="logo">✳</span>
+    <span>NETWORK ENGAGEMENT BOT<small>Grow together</small></span>
+  </a>
+  <nav class="navlinks">
+    <a href="#features">Features</a>
+    <a href="#how">How it works</a>
+    <a href="#membership">Membership</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a class="btn ghost" href="#join">Join early access ↗</a>
+</header>
+<main>
+<section class="container hero" id="home">
+  <div>
+    <span class="eyebrow"><span class="dot"></span> Founding members wanted</span>
+    <h1>Grow your presence.<br><span class="gradient">Grow your network.</span></h1>
+    <p>
+      Join a growing network of creators, entrepreneurs, real estate
+      professionals and businesses. Help shape the tools, meet potential
+      collaborators, exchange useful ideas and build relationships that
+      support long-term online growth.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="#join">Join the early-access list →</a>
+      <a class="btn ghost" href="#features">Explore the idea ↓</a>
+    </div>
+    <p class="small">Help shape the network before membership plans launch. No membership payment is being collected yet.</p>
+  </div>
+  <div class="hero-card">
+    <div class="card-head">
+      <div><strong>Your growth workspace</strong><div class="small">Illustrative product preview</div></div>
+      <span class="pill">CONCEPT DEMO</span>
+    </div>
+    <div class="metrics">
+      <div class="metric"><span>Content ideas</span><strong>12</strong></div>
+      <div class="metric"><span>Weekly goals</span><strong>4</strong></div>
+      <div class="metric"><span>Next steps</span><strong>3</strong></div>
+    </div>
+    <div class="demo-chart">
+      <svg viewBox="0 0 500 130" preserveAspectRatio="none" role="img" aria-label="Illustrative chart">
+        <defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#9c7cff" stop-opacity=".5"/><stop offset="1" stop-color="#9c7cff" stop-opacity="0"/></linearGradient></defs>
+        <path d="M0 105 Q40 95 80 100 T160 75 T240 82 T320 42 T400 48 T500 15 L500 130 L0 130Z" fill="url(#fill)"/>
+        <path d="M0 105 Q40 95 80 100 T160 75 T240 82 T320 42 T400 48 T500 15" fill="none" stroke="#a99aff" stroke-width="3"/>
+      </svg>
+    </div>
+    <div class="activity"><span class="activity-icon">✎</span><span>Plan useful content for your audience</span></div>
+    <div class="activity"><span class="activity-icon">◎</span><span>Find people in your industry</span></div>
+    <div class="activity"><span class="activity-icon">↗</span><span>Build a consistent growth routine</span></div>
+    <p class="small" style="margin:15px 0 0">Preview only. These are not live account analytics or working social integrations.</p>
+  </div>
+</section>
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Designed for momentum</span>
+      <h2>Make your next growth move <span class="gradient">count.</span></h2>
+      <p>The goal is to bring content planning, networking and consistent follow-through into one simple experience.</p>
+    </div>
+    <div class="grid3">
+      <article class="feature"><div class="feature-icon">✎</div><h3>Content planning</h3><p>Organize ideas, campaigns, drafts and publishing plans without losing track of your next post.</p></article>
+      <article class="feature"><div class="feature-icon">◎</div><h3>Find your people</h3><p>Connect with relevant creators, professionals and businesses in related niches.</p></article>
+      <article class="feature"><div class="feature-icon">◷</div><h3>Smart reminders</h3><p>Build habits around publishing, following up, replying and reviewing your progress.</p></article>
+      <article class="feature"><div class="feature-icon">↗</div><h3>Growth tracking</h3><p>Set goals and review available metrics when supported account integrations are added.</p></article>
+      <article class="feature"><div class="feature-icon">🤝</div><h3>Real community</h3><p>Discover conversations and opportunities where your genuine input can make a difference.</p></article>
+      <article class="feature"><div class="feature-icon">⚙</div><h3>Less admin</h3><p>Explore workflows for onboarding, task planning, reminders and campaign organization.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section" id="how">
+  <div class="container split">
+    <div>
+      <span class="kicker">Simple by design</span>
+      <h2>Build a growth routine you can <span class="gradient">actually maintain.</span></h2>
+      <p class="muted">We want to help members turn online visibility into a consistent practice—not promise instant followers or overnight success.</p>
+      <ul class="checks">
+        <li><span class="check">✓</span>Set your goals and introduce your business.</li>
+        <li><span class="check">✓</span>Discover relevant people and communities.</li>
+        <li><span class="check">✓</span>Plan content and choose your own engagement activities.</li>
+        <li><span class="check">✓</span>Learn what works and refine your approach.</li>
+      </ul>
+      <a class="btn primary" href="#join">Help shape the network →</a>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="stepnum">01</div><div><h3>Join early access</h3><p>Tell us who you are, what you do and which platforms matter to you.</p></div></div>
+      <div class="step"><div class="stepnum">02</div><div><h3>Tell us what you need</h3><p>Help prioritize features, community categories and membership benefits.</p></div></div>
+      <div class="step"><div class="stepnum">03</div><div><h3>Connect authentically</h3><p>Find relevant conversations and make your own genuine contributions.</p></div></div>
+      <div class="step"><div class="stepnum">04</div><div><h3>Grow together</h3><p>Invite relevant contacts and help build a useful, trusted community.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">A network for builders</span>
+      <h2>Whatever you're building, <span class="gradient">you belong here.</span></h2>
+      <p>We're looking for people who want to build visibility, relationships and opportunities.</p>
+    </div>
+    <div class="chips">
+      <span class="chip">🚀 Entrepreneurs</span><span class="chip">🎥 Content creators</span>
+      <span class="chip">🏡 Real estate</span><span class="chip">🛍️ Small businesses</span>
+      <span class="chip">🎨 Freelancers</span><span class="chip">📣 Marketers</span>
+      <span class="chip">🌍 Travel brands</span><span class="chip">🎙️ Podcasters</span>
+      <span class="chip">💡 Coaches & consultants</span>
+    </div>
+  </div>
+</section>
+<section class="section" id="membership">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Membership is being developed</span>
+      <h2>Help shape the <span class="gradient">founding offer.</span></h2>
+      <p>We have not set membership prices or activated payments. Join the interest list and tell us what would make the network valuable to you.</p>
+    </div>
+    <div class="plans">
+      <article class="plan">
+        <h3>Community</h3><div class="price">Details soon</div>
+        <p>For people interested in joining the network and participating in its development.</p>
+        <ul><li>Early product updates</li><li>Community announcements</li><li>Opportunity to share feedback</li></ul>
+        <a class="btn ghost full" href="#join">Register interest</a>
+      </article>
+      <article class="plan featured">
+        <span class="pill">FOUNDING MEMBER INTEREST</span>
+        <h3 style="margin-top:15px">Growth</h3><div class="price">Pricing TBD</div>
+        <p>For creators and businesses looking for more structured growth tools.</p>
+        <ul><li>Help prioritize features</li><li>Share your preferred tools</li><li>Be considered for early testing</li></ul>
+        <a class="btn primary full" href="#join">Join the founding list</a>
+      </article>
+      <article class="plan">
+        <h3>Business & Teams</h3><div class="price">Let's discuss</div>
+        <p>For agencies, teams and multi-brand businesses with broader workflow needs.</p>
+        <ul><li>Tell us your team requirements</li><li>Discuss campaign workflows</li><li>Suggest reporting needs</li></ul>
+        <a class="btn ghost full" href="#join">Discuss your needs</a>
+      </article>
+    </div>
+    <p class="small" style="text-align:center;margin-top:18px">No purchase is required to register interest. Final features, prices, terms and availability will be announced before launch.</p>
+  </div>
+</section>
+<section class="section" id="join">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Founding community</span>
+      <h2>Be part of what we <span class="gradient">build next.</span></h2>
+      <p>Register your interest and we'll open a WhatsApp conversation with your details ready to send.</p>
+    </div>
+    <div class="join-grid">
+      <div class="form-card">
+        <h3>Join the early-access list</h3>
+        <p class="muted">Tell us a little about yourself and your goals.</p>
+        <form id="interestForm">
+          <label class="label" for="fullName">Your name *</label>
+          <input class="field" id="fullName" name="fullName" autocomplete="name" required placeholder="Name">
+          <label class="label" for="email">Email address</label>
+          <input class="field" id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+          <label class="label" for="business">Business, brand or creator name</label>
+          <input class="field" id="business" name="business" placeholder="Your brand or business">
+          <label class="label" for="platform">Main platform</label>
+          <select class="field" id="platform" name="platform">
+            <option value="Instagram">Instagram</option>
+            <option value="Facebook">Facebook</option>
+            <option value="TikTok">TikTok</option>
+            <option value="YouTube">YouTube</option>
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="Multiple platforms">Multiple platforms</option>
+            <option value="Other">Other</option>
+          </select>
+          <label class="label" for="goal">What would help you grow?</label>
+          <textarea class="field" id="goal" name="goal" placeholder="More relevant connections, content planning, collaboration, analytics, team tools..."></textarea>
+          <label class="label" for="membershipInterest">Membership interest</label>
+          <select class="field" id="membershipInterest" name="membershipInterest">
+            <option value="Community">Community</option>
+            <option value="Growth membership">Growth membership</option>
+            <option value="Business or team plan">Business or team plan</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+          <div class="notice">By continuing, WhatsApp will open with a prefilled message. You choose whether to send it. This form does not store your details on a server.</div>
+          <button class="btn primary full" type="submit">Continue to WhatsApp →</button>
+        </form>
+      </div>
+      <div class="benefits">
+        <div class="benefit"><strong>✦ Help shape the product</strong><span class="muted">Tell us what tools, integrations and membership benefits matter most.</span></div>
+        <div class="benefit"><strong>🤝 Connect with the community</strong><span class="muted">Help us build a network around relevant connections and authentic engagement.</span></div>
+        <div class="benefit"><strong>🚀 Be considered for early access</strong><span class="muted">Share your interest in testing features as they become available.</span></div>
+        <div class="form-card" id="payments">
+          <h3>Membership payments</h3>
+          <p class="muted">
+            We're building our founding community first. Membership prices,
+            benefits and billing options have not been finalized.
+            No payments are accepted at this time.
+          </p>
+          <div class="notice">
+            <strong>Founding member access is being organized.</strong>
+            Register your interest now. We'll announce membership options
+            and payment details before any paid membership launches.
+          </div>
+          <div class="payment-tabs">
+            <button class="payment-tab active" type="button" data-payment="stripe">💳 Stripe</button>
+            <button class="payment-tab" type="button" data-payment="paypal">PayPal</button>
+            <button class="payment-tab" type="button" data-payment="crypto">₿ Crypto</button>
+          </div>
+          <div class="payment-panel active" id="pay-stripe">
+            <p class="muted">Stripe checkout will be added after membership prices and plans are finalized.</p>
+            <button class="btn ghost full" type="button" onclick="showToast('Stripe checkout is not active yet. No payment has been taken.')">Coming soon</button>
+          </div>
+          <div class="payment-panel" id="pay-paypal">
+            <p class="muted">PayPal checkout will be connected once the membership offer and checkout URL are ready.</p>
+            <button class="btn ghost full" type="button" onclick="showToast('PayPal checkout is not active yet. No payment has been taken.')">Coming soon</button>
+          </div>
+          <div class="payment-panel" id="pay-crypto">
+            <p class="muted">Crypto payments require a verified payment flow, supported network and confirmed payment destination.</p>
+            <button class="btn ghost full" type="button" onclick="showToast('Crypto payments are not active. No wallet was connected and no payment was made.')">Coming soon</button>
+          </div>
+          <p class="small" style="margin-bottom:0">No card details or wallet information are collected by this page.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Frequently asked questions</span>
+      <h2>Before you <span class="gradient">join.</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">What is Network Engagement Bot? <span>＋</span></button><div class="faq-a">It is a developing concept for a growth workspace and member network focused on content planning, relevant connections and authentic online engagement. Some features are still being planned.</div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Is membership free? <span>＋</span></button><div class="faq-a">You can register interest without paying. Membership tiers, pricing and any paid benefits have not been finalized.</div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Does the website automatically grow my followers? <span>＋</span></button><div class="faq-a">No follower or sales results are guaranteed. The aim is to support consistent planning and genuine relationships. Any future social integrations must follow the applicable platform rules.</div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Are Stripe, PayPal and crypto working? <span>＋</span></button><div class="faq-a">No. These are currently disabled placeholders. Payments will only be enabled after pricing and the proper checkout setup are ready.</div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">How do I invite someone? <span>＋</span></button><div class="faq-a">Use the invite button below to share a message with friends, creators or businesses who may want to join the early-access community.</div></div>
+    </div>
+  </div>
+</section>
+<section class="container">
+  <div class="cta">
+    <span class="kicker">Help grow the network</span>
+    <h2>Know someone who should be here?</h2>
+    <p>Invite a creator, business owner or entrepreneur who would value genuine connections and a more organized approach to online growth.</p>
+    <div class="actions" style="justify-content:center">
+      <a class="btn primary" href="#join">Join early access →</a>
+      <button class="btn ghost" id="shareButton" type="button">Invite someone ↗</button>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <a class="brand" href="#home"><span class="logo">✳</span><span>NETWORK ENGAGEMENT BOT<small>Grow together</small></span></a>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#membership">Membership</a>
+        <a href="#join">Early access</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <p class="small" style="margin-top:22px">Network Engagement Bot is a developing product concept. Feature previews are illustrative and may not represent live functionality. No payment is processed on this website. Social networks are independent third-party services. Members should use authentic engagement and follow each platform's terms and policies.</p>
+    <p class="small">© <span id="year"></span> Network Engagement Bot. All rights reserved.</p>
+  </div>
+</footer>
+<a class="whatsapp"
+   id="whatsappLink"
+   href="https://wa.me/16478485997?text=Hi%20Luvesta%20Group%2C%20I%27m%20interested%20in%20joining%20the%20Network%20Engagement%20Bot%20founding%20community."
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Contact Luvesta Group on WhatsApp">
+  ◉ Join us on WhatsApp
+</a>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+/* SETUP
+   WhatsApp number: international format, digits only.
+   Current number: +1 647-848-5997.
+   Payments intentionally remain disabled until configured.
+*/
+const CONFIG = {
+  whatsappNumber: "16478485997",
+  whatsappIntro: "Hi Luvesta Group, I would like to know more about Network Engagement Bot."
+};
+document.getElementById("year").textContent = new Date().getFullYear();
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+  window.clearTimeout(window.toastTimer);
+  window.toastTimer = window.setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3500);
+}
+document.getElementById("interestForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  const form = new FormData(this);
+  const name = (form.get("fullName") || "").toString().trim();
+  if (!name) {
+    showToast("Please enter your name first.");
+    return;
+  }
+  const message = [
+    CONFIG.whatsappIntro,
+    "",
+    "EARLY ACCESS INTEREST",
+    "Name: " + name,
+    "Email: " + (form.get("email") || "Not provided"),
+    "Brand/business: " + (form.get("business") || "Not provided"),
+    "Main platform: " + (form.get("platform") || "Not provided"),
+    "Membership interest: " + (form.get("membershipInterest") || "Not sure yet"),
+    "Growth goals: " + (form.get("goal") || "Not provided")
+  ].join("\n");
+  const url = "https://wa.me/" + CONFIG.whatsappNumber +
+    "?text=" + encodeURIComponent(message);
+  window.open(url, "_blank", "noopener,noreferrer");
+});
+document.querySelectorAll(".payment-tab").forEach(button => {
+  button.addEventListener("click", function() {
+    document.querySelectorAll(".payment-tab").forEach(tab => tab.classList.remove("active"));
+    document.querySelectorAll(".payment-panel").forEach(panel => panel.classList.remove("active"));
+    this.classList.add("active");
+    const panel = document.getElementById("pay-" + this.dataset.payment);
+    if (panel) panel.classList.add("active");
+  });
+});
+document.querySelectorAll(".faq-q").forEach(button => {
+  button.addEventListener("click", function() {
+    const item = this.closest(".faq-item");
+    const open = item.classList.toggle("open");
+    this.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+});
+document.getElementById("shareButton").addEventListener("click", async function() {
+  const invite =
+    "I'm joining the founding community for Network Engagement Bot! " +
+    "It's being developed for creators, entrepreneurs and businesses " +
+    "who want better content planning, meaningful connections and " +
+    "authentic online engagement. Join the early-access community " +
+    "and help shape what gets built next.";
+  if (navigator.share) {
+    try {
+      await navigator.share({title: "Network Engagement Bot", text: invite, url: window.location.href});
+    } catch (error) {
+      if (error.name !== "AbortError") showToast("You can copy the invite message from the website.");
+    }
+  } else if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(invite + "\n" + window.location.href);
+      showToast("Invite message copied. Send it to someone who may be interested.");
+    } catch (error) {
+      showToast("Use the website link to invite someone to the network.");
+    }
+  } else {
+    showToast("Copy the website address and share it with your invite message.");
+  }
+});
+</script>
+</body>
+</html>
